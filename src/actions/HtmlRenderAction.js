@@ -15,3 +15,10 @@ export function onChangeCss(newValue) {
     newValue
   };
 }
+
+export function onChangeJs(newValue) {
+  return {
+    type: HTML_RENDER.CHANGE_JS,
+    newValue
+  }
+}
