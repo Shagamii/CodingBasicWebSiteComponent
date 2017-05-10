@@ -1,2 +1,4 @@
 # HTML/CSS をコーディングするReactコンポーネント
-JavaScriptを実装中
+JavaScriptの実行も可能（５/11)
+
+componentとして公開目指して調整中
