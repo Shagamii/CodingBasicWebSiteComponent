@@ -1,7 +1,5 @@
 import React, { Component, PropTypes } from 'react';
 
-import styles from '../styles/HtmlCssComponent.css';
-
 export default class HtmlCssComponent extends Component {
   static propTypes = {
     html_code: PropTypes.string.isRequired,

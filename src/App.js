@@ -6,6 +6,7 @@ import { PropTypes } from 'prop-types';
 import AceEditor from 'react-ace';
 
 import HtmlCssComponent from './views/HtmlCssRender';
+import JavaScriptRun from './views/JavaScriptRun';
 
 import 'brace/mode/html';
 import 'brace/mode/css';
@@ -32,19 +33,15 @@ class App extends Component {
   onChangeJs = newValue =>
   this.props.onChangeJs(newValue);
 
-  exeJS = event =>
-  this.props.htmlRender.javascript_row;
-
-  // componentDidMount() {
-  //   this.exeJS
-  // };
+  runJs = event =>
+  eval(this.props.htmlRender.javascript_row);
 
   render() {
     const { htmlRender } = this.props;
     const {
       html_row,
       css_row,
-      // javascript_row
+      javascript_row
     } = htmlRender;
 
     return (
@@ -70,14 +67,17 @@ class App extends Component {
               keyboardHandler='vim'
             />
 
-          {/*  <AceEditor
+            <AceEditor
               className='editor'
               value={ javascript_row }
               onChange={ this.onChangeJs }
               mode='javascript'
               theme='xcode'
               keyboardHandler='vim'
-            /> */}
+            />
+            <JavaScriptRun
+              runJs={ this.runJs }
+            />
           </form>
         </div>
         <HtmlCssComponent
